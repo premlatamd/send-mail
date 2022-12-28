@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'testapp/css/bootstrap.css' %}">
+    </head>
+    <body>
+        <style>
+        </style>
+
+        <div class='container mt-5'>
+            <div class='form-row'>
+                <div class='col-sm-9'>
+               
+        <h2 class='text-center alert alert-info'>WELCOME HERE</h2>
+        <form action='' method='post' novalidate>
+            {% csrf_token %}
+            {% for f in fm %}
+           <div> {{f.label_tag}} {{f}} {{f.errors|striptags}}</div><br>
+            {% endfor %}<br>
+            <input type='submit' value='SIGNUP'/>  
+            <button type='submit'><a href="{% url 'signin' %}">SIGNIN</a></button>  
+        </form>
+    </div>
+    </div>
+</div>
+
+    
+<script src="{% static 'enroll/js/jquery.js' %}" ></script>
+<script src="{% static 'enroll/js/popper.js' %}" ></script>
+<script src="{% static 'enroll/js/bootstrap.js' %}"></script>
+    </body>
+</html>
